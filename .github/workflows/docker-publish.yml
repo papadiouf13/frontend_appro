@@ -8,6 +8,7 @@ on:
 
 env:
   IMAGE_NAME: supply-frontend
+  NEXT_PUBLIC_API_URL: http://16.171.147.180:5200/api
 
 jobs:
   docker:
@@ -32,8 +33,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          build-args: |
+            NEXT_PUBLIC_API_URL=${{ env.NEXT_PUBLIC_API_URL }}
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-
-            
