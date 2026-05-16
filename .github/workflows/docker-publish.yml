@@ -8,7 +8,7 @@ on:
 
 env:
   IMAGE_NAME: supply-frontend
-  NEXT_PUBLIC_API_URL: http://16.171.147.180:5200/api
+  NEXT_PUBLIC_API_URL: http://13.50.103.153:5200/api
 
 jobs:
   docker:
